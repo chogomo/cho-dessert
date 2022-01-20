@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夕暮手做派-首頁</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .wrap{
+            width: 100%;
+            margin: auto;
+        }
+        .header{
+            width: 100%;
+            height: 66px;
+            display: flex;
+            background-color:rgb(255, 255, 255);
+            position:fixed;
+            z-index: 5;
+        }
+        .header a img{
+            width: 60px;
+            padding: 3px 10px;
+        }
+        .header nav{
+            width: 100%;
+            text-align: right;
+            padding: 20px 20px 20px 0;
+            font-size: 0;
+        }
+        .header nav a{
+            display: inline-block;
+            margin: 0 10px 0;
+            text-decoration: none;
+            color:rgb(141, 141, 141);
+            font-size: 20px;
+            font-weight: 700;
+            transition: 0.5s;
+        }
+
+        .header nav a:hover{
+            color:black;
+
+        }
+        .main_banner{
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .main_banner .banner .slider_item{
+            position: absolute;
+            width: 100%;
+        }
+        .main_banner .banner .slider_item img{
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .main_banner .banner .slider_item:not(:first-child){
+            opacity: 0;
+        }
+
+        .main_banner #next{
+            width: 60px;
+            height: 120px;
+            font-size: 80px;
+            color:white;
+            text-decoration: none;
+            position: absolute;
+            background-color:transparent;
+            border: transparent;
+            bottom: 230px;
+            right: 30px;
+            opacity: 0.5;
+            transition: 0.5s;
+            text-shadow: 0 0 0.1em #000;
+        }
+        .main_banner #prev{
+            width: 60px;
+            height: 120px;
+            font-size: 80px;
+            color:white;
+            text-decoration: none;
+            position: absolute;
+            background-color:transparent;
+            border: transparent;
+            bottom: 230px;
+            left: 50px;
+            opacity: 0.5;
+            transition: 0.5s;
+            text-shadow: 0 0 0.2em #000;
+        }
+
+        .main_banner #next:hover{
+            opacity: 1;
+        }
+        .main_banner #prev:hover{
+            opacity: 1;
+        }
+
+        #navDiv{
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            z-index: 2;
+        }
+
+        #navDiv a{
+            display:inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 5px;
+            border:  2px solid #fff;
+            border-radius: 100%;
+        }
+
+        @keyframes leftstr{
+            0%{
+                left:-100%;
+                opacity: 0;
+            }
+            100%{
+                left: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes leftover{
+            0%{
+                left:0;
+                opacity: 1;
+            }
+            100%{
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes rightstr{
+            0%{
+                left:100%;
+                opacity: 0;
+            }
+            100%{
+                left: 0;
+                opacity: 1;
+            }
+        }
+
+        @keyframes rightover{
+            0%{
+                left:0;
+                opacity: 1;
+            }
+            100%{
+                left:-100%;
+                opacity: 0;
+            }
+        }
+
+        .about{
+            text-align: center;
+            padding: 50px 10px;
+            background-color: rgb(245, 170, 10);
+        }
+        .about .wrap h1{
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .about .wrap p{
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 2em;
+        }
+        .item{
+            display: flex;
+            background: rgb(13, 53, 36);
+            position: relative;
+            
+        }
+        .item1{
+            width: 100%;
+            height: 540px;
+            background: linear-gradient(75deg, transparent 50%,rgb(13, 53, 36) 50% ) center center / 100% 100%,
+            url("image/pie2.jpg") left center / 54% auto;
+            justify-content:right
+        }
+        .item2{
+            width: 100%;
+            height: 540px;
+            background: linear-gradient(115deg,rgb(13, 53, 36) 50% , transparent 50%) center center / 100% 100%,
+            url("image/pie3.jpg") right center / 60% auto;
+        }
+        .item3{
+            width: 100%;
+            height: 540px;
+            background: linear-gradient(75deg, transparent 50%,rgb(13, 53, 36) 50% ) center center / 100% 100%,
+            url("image/pie4.jpg") left center / 55% auto;
+            justify-content:right
+        }
+        .item4{
+            width: 100%;
+            height: 540px;
+            background: linear-gradient(115deg, rgb(13, 53, 36) 50% , transparent 50% ) center center / 100% 100%,
+            url("image/pie5.jpg") right center / 57% auto;
+        }
+
+        .item .text{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content:center ;
+            text-align: center;
+            position: absolute;
+            top: 500px;
+            z-index:2;
+            opacity: 0;
+            
+        }
+
+        .anm{
+            animation: move 2s normal ease-out forwards;
+        }
+
+        @keyframes move{
+            0%{
+                top: 500px;
+                opacity: 0;
+            }
+            100%{
+                top: 200px;
+                opacity: 1;
+            }
+        }
+
+
+        .item .text h2{
+            font-size: 30px;
+            padding-bottom: 20px;
+            color:#fff;
+        }
+        .item .text p{
+            font-size: 20px;
+            color:#fff;
+            line-height: 1.5em;
+            padding: 0 50px;
+        }
+        .follow{
+            display: flex;
+            width: 100%;
+            margin: auto;
+        }
+        .follow .wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px 0; 
+        }
+        .follow .wrap .icon{
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            text-align: center;
+            background-color: #ccc;
+            border-radius: 100%;
+            border: 3px solid #aaa;
+        }
+        .follow .wrap i{
+            padding: 15px;
+            font-size: 30px;
+        }
+        .follow .logo2{
+            flex-direction: column;
+        }
+        .follow .logo2 h3{
+            font-size: 30px;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .follow .logo2 img{
+           width: 300px; 
+        }
+        .follow .mail p{
+            font-size: 20px;
+        }
+        .foot{
+            width:100%;
+            height: 50px;
+            background-color: rgb(44, 33, 21);
+            color:#fff;
+            text-align: center;
+            padding-top: 25px;
+        }
+        .foot p{
+            font-size: 20px;
+        }
+
+        /*以下為RWD設定*/
+
+        #menu_control{
+            position: absolute;
+            /* z-index: 6; */
+        }
+        .menu_btn{
+            position: absolute;
+            display: block;
+            text-align: center;
+            top: 8.5px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            display: none;
+            
+        }
+
+        .menu_btn span{
+            font-size: 25px;
+            opacity: 0;
+            
+        }
+
+        .menu_btn::before{
+            content:'';
+            position: absolute;
+            height: 3px;
+            width: 38px;
+            left: 6px;
+            background-color:rgb(117, 117, 117);
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 10px 0px rgb(117, 117, 117),
+                        0px -10px 0px rgb(117, 117, 117);
+            
+        }
+
+        @media screen and (max-width:768px){
+
+            .wrap{
+                position: relative;
+                top:60px;
+            }
+            
+            .header a img{
+                width: 50px;
+                padding: 3px 10px;
+            }
+
+            .header nav{
+                position: absolute;
+                background-color: #fff;
+                height:100vh;
+                width: 60%;
+                box-shadow:3px 0px 20px rgb(13, 53, 36);
+                left: -100%;
+                transition: 0.5s;
+            }
+            .header nav a{
+                display: block;
+                text-align:left;
+                padding: 20px;
+                border-bottom:1px solid rgb(141, 141, 141) ;
+            }
+            .menu_btn{
+                display: block;
+            }
+
+            #menu_control:checked~.header nav{
+                left: 0;
+            }
+
+            .about{
+                height: 200px;
+                padding: 20px 0;
+            }
+
+            .about .wrap h1{
+                font-size: 25px;
+                font-weight: 700;
+                padding-bottom: 10px;
+                border-bottom:1px solid #000 ;
+            }
+            .about .wrap p{
+                padding: 15px;
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 1.5em;
+            }
+
+            .item1{
+                width: 100%;
+                height: 480px;
+                background: linear-gradient(0deg, rgb(13, 53, 36)38%,transparent 50% ) center center / 100% 100%,
+                url("image/pie2.jpg") center top / 100% auto;
+                justify-content:center
+            }
+            .item2{
+                width: 100%;
+                height: 480px;
+                background: linear-gradient(0deg,rgb(13, 53, 36) 38% , transparent 50%) center center / 100% 100%,
+                url("image/pie3.jpg") center top / 100% auto;
+            }
+            .item3{
+                width: 100%;
+                height: 480px;
+                background: linear-gradient(0deg, rgb(13, 53, 36) 38%,transparent 50% ) center center / 100% 100%,
+                url("image/pie4.jpg") center top / 100% auto;
+                justify-content:right
+            }
+            .item4{
+                width: 100%;
+                height: 500px;
+                background: linear-gradient(0deg, rgb(13, 53, 36) 38% , transparent 50% ) center center / 100% 100%,
+                url("image/pie5.jpg") center top / 100% auto;
+            }
+            .item .text{
+                width: 100%;
+            }
+            .item .text h2{
+            font-size: 22px;
+            padding-bottom: 10px;
+            }
+            .item .text p{
+            font-size: 16px;
+            }
+            @keyframes move{
+            0%{
+                top: 500px;
+                opacity: 0;
+            }
+            100%{
+                top: 300px;
+                opacity: 1;
+            }
+            }
+            .follow{
+                flex-direction: column;
+            }
+            .follow .logo2 h3{
+                padding-bottom:20px;
+            }
+            .follow .mail{
+                height: 200px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu_control">
+    <div class="header">
+        <a href="index.html" id="logo"><img src="image/logo.jpg" alt="dessert"></a>
+        <label for="menu_control" class="menu_btn">
+            <span>選單選單</span>
+        </label>
+        <nav>
+             <a href="dessert_story.html">品牌故事</a>
+             <a href="dessert_commodity.html">商品總覽</a>
+             <a href="dessert_news.html">最新訊息</a>
+             <a href="dessert_material.html">原料介紹</a>
+             <a href="dessert_shop.html">門市資訊</a>
+             <a href="dessert_contact.html">聯絡我們</a>
+        </nav>
+    </div>
+    <div class="wrap" id="mainwrap">
+        <div class="main_banner">
+            <div class="banner">
+                <div class="slider_item">
+                    <img src="image/banner_1.jpg" alt="輪播圖1">
+                </div>
+                <div class="slider_item">
+                    <img src="image/banner_2.jpg" alt="輪播圖2">
+                </div>
+                <div class="slider_item">
+                    <img src="image/banner_3.jpg" alt="輪播圖3">
+                </div>
+                <div class="slider_item">
+                    <img src="image/banner_4.jpg" alt="輪播圖4">
+                </div>
+            </div>
+            <a href="#" id="next">&gt</a>
+            <a href="#" id="prev">&lt</a>
+            <div id="navDiv">
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+            </div>
+        </div>
+        <div class="about">
+            <div class="wrap">
+                <h1>食的藝術</h1>
+                <p>我們的原料，堅持使用法國進口奶油，以及日本精糖，結合台灣在地小農生產的水果
+                ，及台灣特有的在地傳統點心，打造出各式獨創風味的甜鹹派
+                </p>
+　　　　　　　</div>
+        </div>
+        <div class="item item1" id="box1">
+            <div class="text" id="txt1">
+                    <h2>經典甜派</h2>
+                    <p>我們準備了所有甜派愛好者都熱愛的常見的口味，
+                        經典口味有濃郁起司派，焦糖布丁派，印象咖啡派，
+                        經典南瓜派，經典生巧克力派，經典抹茶..等，
+                        均使用最高級的食材，光是咬一口就香氣逼人</p>
+            </div>
+        </div>
+        <div class="item item2" id="box2">
+            <div class="text" id="txt2">
+                    <h2>蔬食鹹派</h2>
+                    <p>我們的招牌鹹派分成六種口味，
+                        有紅醬茄，香椿節瓜，青醬香茄，
+                        馬薩拉咖哩，奶油鮮蔬，松露野菇，
+                        所有蔬菜食材均採用與小農配合的蔬果
+                        及私房特製醬料製成，打造出溫和濃厚的口味</p>
+            </div>
+        </div>
+        <div class="item item3" id="box3">
+            <div class="text" id="txt3">
+                    <h2>季節水果派</h2>
+                    <p>均使用當季新鮮水果製成，致力於打造清爽溫潤的口感，
+                        包含經典蘋果，香濃芒果，清檸香橙，莓好時光，
+                        蜜蜜桃李，荔枝玫瑰，清香葡萄，不論夏季還是冬季，
+                        來點季節水果吧
+                    </p>
+            </div>
+        </div>
+        <div class="item item4" id="box4">
+            <div class="text" id="txt4">
+                    <h2>台灣創意派</h2>
+                    <p>由台灣古早味點心為發想來源
+                        打造出不同於傳統口味的嶄新風格
+                        口味有酥香蛋黃酥，追憶牛奶糖，
+                        濃郁開心果，黑糖蜜地瓜，芝麻花生
+                        讓我們一起回憶兒時的純粹時光
+                    </p>
+            </div>
+        </div>
+        <div class="follow">
+            <div class="wrap all">
+                <div class="icon"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                <div class="icon"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                <div class="icon"><i class="fa fa-youtube-play" aria-hidden="true"></i></div>
+            </div>
+            <div class="wrap logo2">
+                <h3>Follow us</h3>
+                <img src="image/logo.jpg" alt="頁尾圖片">
+            </div>
+            <div class="wrap mail">
+                <p>j0921352@yahoo.com.tw</p>
+            </div>    
+        </div>
+        <div class="foot">
+            <p>copyright</p>
+        </div>
+    </div>
+    <script src="tools_pic.js"></script>
+</body>
+</html>

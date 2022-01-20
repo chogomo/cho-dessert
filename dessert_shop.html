@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>夕暮手做派-固定攤位資訊</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <style type="text/css">
+    * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .wrap{
+            width: 100%;
+            margin: auto;
+        }
+        .header{
+            width: 100%;
+            display: flex;
+            background-color:#fff;
+            position:fixed;
+            z-index: 5;
+        }
+        .header a img{
+            width: 60px;
+            padding: 3px 10px;
+        }
+        .header nav{
+            width: 100%;
+            text-align: right;
+            padding: 20px 20px 20px 0;
+            font-size: 0;
+        }
+        .header nav a{
+            display: inline-block;
+            margin: 0 10px 0;
+            text-decoration: none;
+            color:rgb(141, 141, 141);
+            font-size: 20px;
+            font-weight: 700;
+            transition: 0.5s;
+        }
+
+        .header nav a:hover{
+            color:black;
+
+        }
+        .banner img{
+            width: 100%;
+            vertical-align: middle;
+        }
+        .address{
+            width: 1200px; 
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            margin:auto;
+            padding: 30px 0 ;
+        }
+        .address .nav2{
+            width: 200px;
+            text-align: center;
+            box-sizing: border-box;
+            margin: 0 20px;
+            padding: 20px;
+            background-color: #eee;
+        }
+        .address .nav2 h3{
+            border-bottom: 1px solid #000; 
+            padding: 10px 0;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .address .nav2 nav{
+            display: flex;
+            flex-direction: column;
+            padding: 30px 0;
+        }
+        .address .nav2 nav a{
+            text-decoration: none;
+            line-height: 30px;
+            color: black;
+            border-bottom: 1px dotted #000;
+            font-size: 16px;
+            padding: 3px 0;
+        }
+        .information{
+            width: 1000px;
+            display: flex;
+            flex-direction: column;
+        }
+        .information img{
+            width: 600px;
+            padding: 20px 0 ;
+        }
+        .information .txt{
+            width: 600px;
+        }
+        .information h2{
+            font-size: 25px;
+            font-weight: 700;
+        }
+        .information h4{
+            font-size: 18px;
+            border-bottom:1px dotted #000 ;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+        .information p{
+            display: inline-block;
+            line-height: 25px;
+        }
+        .foot{
+            width:100%;
+            height: 50px;
+            background-color: rgb(44, 33, 21);
+            color:#fff;
+            text-align: center;
+            padding-top: 25px;
+        }
+        .foot p{
+            font-size: 20px;
+        }
+        /*以下為RWD設定*/
+
+        #menu_control{
+            position: absolute;
+            /* z-index: 6; */
+        }
+        .menu_btn{
+            position: absolute;
+            display: block;
+            text-align: center;
+            top: 8.5px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            /* background-color: #aaa; */
+            display: none;
+            
+        }
+
+        .menu_btn span{
+            font-size: 25px;
+            opacity: 0;
+            
+        }
+
+        .menu_btn::before{
+            content:'';
+            position: absolute;
+            height: 3px;
+            width: 38px;
+            left: 6px;
+            background-color:rgb(117, 117, 117);
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            box-shadow: 0px 10px 0px rgb(117, 117, 117),
+                        0px -10px 0px rgb(117, 117, 117);
+            
+        }
+
+        @media screen and (max-width:768px){
+            .wrap{
+                position: relative;
+                top:60px;
+            }
+            
+            .header a img{
+                width: 50px;
+                padding: 3px 10px;
+            }
+
+            .header nav{
+                position: absolute;
+                background-color: #fff;
+                height:100vh;
+                width: 60%;
+                box-shadow:3px 0px 20px rgb(141, 141, 141);
+                left: -100%;
+                transition: 0.5s;
+            }
+            .header nav a{
+                display: block;
+                text-align:left;
+                padding: 20px;
+                border-bottom:1px solid rgb(141, 141, 141);
+            }
+            .menu_btn{
+                display: block;
+            }
+
+            #menu_control:checked~.header nav{
+                left: 0;
+            }
+            .address{
+                width: 100%;
+                flex-direction: column;
+            }
+            .address .nav2{
+                width:90%;
+                margin: 5px auto 10px;
+            }
+            .address .information{
+                width: 90%;
+                margin: 0 auto;
+            }
+            .address .information h2{
+                text-align: center;
+                padding-top: 10px;
+            }
+            .address .information img{
+                width: 100%;
+                padding: 20px 0;
+            }
+            .address .information .txt{
+                width:100%;
+            }
+            .address .information h4{
+                font-size: 20px;
+                font-weight: 600;
+            }
+            .address .information p{
+                display: inline-block;
+                line-height: 25px;
+            }
+        }    
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu_control">
+    <div class="header">
+        <a href="index.html" id="logo"><img src="image/logo.jpg" alt="dessert"></a>
+        <label for="menu_control" class="menu_btn">
+            <span>選單選單</span>
+        </label>
+        <nav>
+            <a href="dessert_story.html">品牌故事</a>
+            <a href="dessert_commodity.html">商品總覽</a>
+            <a href="dessert_news.html">最新訊息</a>
+            <a href="dessert_material.html">原料介紹</a>
+            <a href="dessert_shop.html">門市資訊</a>
+            <a href="dessert_contact.html">聯絡我們</a>
+        </nav>
+    </div>
+    <div class="wrap">
+        <div class="banner">
+            <img src="image/banner_image_shop.jpg" alt="點心資訊">
+        </div>
+        <div class="address">
+            <div class="nav2">
+                <h3>參與市集</h3>
+                <nav>
+                    <a href="">台北邊緣人市集</a>
+                    <a href="">台中暮暮市集</a>
+                    <a href="">台中小旅市集</a>
+                    <a href="">台中揪揪市集</a>
+                    <a href="">台中光復新村</a>
+                </nav>    
+            </div>
+            <div class="information">
+                <h2>台中暮暮市集</h2>
+                <img src="image/Instagram-Src.jpg" alt="暮暮市集">
+                <div class="txt">
+                    <h4>基本資訊:</h4>
+                    <p>地址:<br>403 臺中市西區民生路368巷2弄12號 <br>
+                    營業時間:<br> 每周六，週日，早上11:00~下午18:30<br>
+                    每周六，週日，早上11:00~下午18:30<br>
+                    交通資訊:<br> 公車：<br>「台中火車站」搭公車5號 (路線)、51號 (路線) 到「英才郵局」，步行5分鐘。<br>
+                    開車：<br>可停民生路、美村路一段上的路邊停車格；或經國園道停車場 (一小時20元)、美村路一段的Times停車場 (半小時25元起) 步行都在5分鐘內。</p>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <p>copyright</p>
+        </div>
+    </div>
+</body>
+</html>
