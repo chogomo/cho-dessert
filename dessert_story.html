@@ -8,215 +8,69 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" href="banner.css">
     <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-family: 'Noto Sans TC', sans-serif;
-        }
-        .wrap{
-            width: 100%;
-            margin: auto;
-        }
-        .header{
-            width: 100%;
+        .banner{
+            background: url(image/banner_image_story.jpg) no-repeat center/cover;
             display: flex;
-            background-color:rgb(255, 255, 255);
-            position:fixed;
-            z-index: 5;
+            align-items:end;
         }
-        .header a img{
-            width: 60px;
-            padding: 3px 10px;
+        .banner h3::before{
+            width:160px;
         }
-        .header nav{
-            width: 100%;
-            text-align: right;
-            padding: 20px 20px 20px 0;
-            font-size: 0;
-        }
-        .header nav a{
-            display: inline-block;
-            margin: 0 10px 0;
-            text-decoration: none;
-            color:rgb(141, 141, 141);
-            font-size: 20px;
-            font-weight: 700;
-            transition: 0.5s;
-        }
-
-        .header nav a:hover{
-            color:black;
-
-        }
-        .banner img{
-            width: 100%;
-            vertical-align: middle;
-        }
-        .title{
-            width: 100%;
-            height: 140px;
-            background-color:rgb(245, 170, 10);
-            position: relative;
-        }
-        .title h1{
-            text-align: center;
-            line-height: 140px;
-            font-size: 30px;
-            font-weight: 700;
-            position: relative;
-        }
-
-        .title::before{
-            content: '';
-            position: absolute;
-            height: 1px;
-            width: 50%;
-            bottom: 30%;
-            left: 25%;
-            margin: auto;
-            background-color: black;
-        }
-
         .story{
-            position: relative;
+            width: 100%;
+            height: 1282px;
+            background: url(image/about.png) no-repeat center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-       .story .bgimg img{
-           width: 100%;
-           height: 100%;
-           opacity: 0.8;
-           vertical-align: middle;
-       }
        .story_txt{
-           position: absolute;
-           width: 40%;
-           top: 30%;
-           left: 29%;
+           width: 50%;
+           text-align: center;
+           transform: translateY(-5%);
        }
        .story_txt h2{
            font-size: 30px;
-           text-align: center;
-           line-height: 50px;
-           /* background-color: #eee; */
+           line-height: 60px;
+           font-weight: 600;
        }
        .story_txt p{
-        font-size: 25px;
-        text-align: center;
-        line-height: 40px; 
-       }
-       .foot{
-            width:100%;
-            height: 50px;
-            background-color: rgb(44, 33, 21);
-            color:#fff;
-            text-align: center;
-            padding-top: 25px;
-        }
-        .foot p{
-            font-size: 20px;
-        }
-
-         /*以下為RWD設定*/
-
-         #menu_control{
-            position: absolute;
-        }
-        .menu_btn{
-            position: absolute;
-            display: block;
-            text-align: center;
-            top: 8.5px;
-            right: 10px;
-            width: 50px;
-            height: 50px;
-            display: none;
-            
-        }
-
-        .menu_btn span{
             font-size: 25px;
-            opacity: 0;
-            
+            line-height: 40px; 
         }
-
-        .menu_btn::before{
-            content:'';
-            position: absolute;
-            height: 3px;
-            width: 38px;
-            left: 6px;
-            background-color:rgb(117, 117, 117);
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            box-shadow: 0px 10px 0px rgb(117, 117, 117),
-                        0px -10px 0px rgb(117, 117, 117);
-            
-        }
-
         @media screen and (max-width:768px){
-            .wrap{
-                position: relative;
-                top:60px;
+            .banner{
+                background: url(image/banner_image_story.jpg) no-repeat 38%/cover;
             }
-            
-            .header a img{
-                width: 50px;
-                padding: 3px 10px;
-            }
-
-            .header nav{
-                position: absolute;
-                background-color: #fff;
-                height:100vh;
-                width: 60%;
-                box-shadow:3px 0px 20px rgb(13, 53, 36);
-                left: -100%;
-                transition: 0.5s;
-            }
-            .header nav a{
-                display: block;
-                text-align:left;
-                padding: 20px;
-                border-bottom:1px solid rgb(141, 141, 141) ;
-            }
-            .menu_btn{
-                display: block;
-            }
-
-            #menu_control:checked~.header nav{
-                left: 0;
-            }
-
-            .story .bgimg img{
+            .story {
                 width: 100%;
-                height: 500px;
-                opacity: 0.6;
-                vertical-align: middle;
+                height: 560px;
+                opacity: 0.8;
             }
-
             .story_txt{
-                position: absolute;
-                width: 70%;
+                width: 60%;
                 height: 50%;
-                top: 26%;
-                left: 15%;
-                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: rgb(228, 232, 235,0.8);
                 border-radius: 100%;
-                box-shadow: 0 0 40px 50px #fff;
+                box-shadow: 0 0 40px 50px rgb(228, 232, 238,0.8);
             }
-
             .story_txt h2{
-                font-size: 22px;
-                text-align: center;
-                line-height: 40px;
+                font-size: 20px;
+                padding: 5px;
+                line-height: 30px;
                 font-weight: 600;
+                text-shadow:0 0 0.5em rgb(228, 232, 238) ;
             }    
 
             .story .story_txt p{
                 font-size: 15px;
-                line-height: 24px; 
+                line-height: 24px;
+                text-shadow:0 0 0.5em rgb(228, 232, 238) ; 
             }
         }    
     </style>
@@ -233,26 +87,26 @@
             <a href="dessert_commodity.html">商品總覽</a>
             <a href="dessert_news.html">最新訊息</a>
             <a href="dessert_material.html">原料介紹</a>
-            <a href="dessert_shop.html">門市資訊</a>
+            <a href="dessert_shop.html">市集資訊</a>
             <a href="dessert_contact.html">聯絡我們</a>
         </nav>
     </div>
     <div class="wrap">
         <div class="banner">
-            <img src="image/banner_image_story.jpg" alt="點心資訊">
+            <div class="banner_txt">
+                <h1>夕暮手作派</h1>
+                <h3>Story</h3>
+            </div>
         </div>
         <div class="title">
             <h1>關於夕暮手做派</h1>
         </div>
         <div class="story">
-            <div class="bgimg">
-                <img src="image/annie-spratt-VDXtVYJVj7A-unsplash.jpg" alt="背景圖">
-            </div>
             <div class="story_txt">
                 <h2>由回憶中誕生的甜點</h2>
-                <p>記得小時候放學回家，母親總是會準備各式各樣的點心等著我們，其中又以各式各樣母親獨創口味的鹹甜派最讓我印象深刻，長大後由於工作因素
-                    ，越來越沒有機會吃到這些點心，在外又總是找不到相同的滋味，於是興起了自己動手做並將其發揚光大的想法，這就是夕暮的開始，夕暮就如同
-                    放學時夕陽照射下的時光，溫暖每個人的心，希望每個人都有機會享受到，母親獨創的好滋味
+                <p>記得小時候放學回家，母親總是會準備各式各樣的點心等著我們，其中又以母親獨創口味的鹹甜派最讓我印象深刻，長大後由於工作因素
+                    ，越來越沒有機會吃到這些點心，在外又總是找不到相同的滋味，於是有了自己動手做的想法，這就是夕暮的開始，夕暮就如同
+                    放學時夕陽照射下的時光，搭配好吃的派，溫暖每個人的心。
                 </p>
             </div>
         </div>
@@ -260,6 +114,7 @@
             <p>copyright</p>
         </div>
     </div>    
-    
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script src="javascript/btn_change.js"></script> 
 </body>
 </html>

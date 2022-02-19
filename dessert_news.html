@@ -8,95 +8,32 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" href="banner.css">
     <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-family: 'Noto Sans TC', sans-serif;
-        }
-        .wrap{
-            width: 100%;
-            margin: auto;
-        }
-        .header{
-            width: 100%;
+        .banner{
+            background: url(image/banner_image_news.jpg) no-repeat center/cover;
             display: flex;
-            background-color:#fff;
-            position:fixed;
-            z-index: 5;
+            align-items:end;
         }
-        .header a img{
-            width: 60px;
-            padding: 3px 10px;
+        .banner h3::before{
+            width:160px;
         }
-        .header nav{
-            width: 100%;
-            text-align: right;
-            padding: 20px 20px 20px 0;
-            font-size: 0;
-        }
-        .header nav a{
-            display: inline-block;
-            margin: 0 10px 0;
-            text-decoration: none;
-            color:rgb(141, 141, 141);
-            font-size: 20px;
-            font-weight: 700;
-            transition: 0.5s;
-        }
-
-        .header nav a:hover{
-            color:black;
-
-        }
-        .banner img{
-            width: 100%;
-            vertical-align: middle;
-        }
-        .about{
-            width: 100%;
-            height: 140px;
-            background-color:rgb(44, 33, 21);
-            position: relative;
-        }
-        .about h2{
-            text-align: center;
-            line-height: 140px;
-            font-size: 30px;
-            font-weight: 700;
-            position: relative;
-            color: #fff;
-        }
-
-        .about::before{
-            content: '';
-            position: absolute;
-            height: 2px;
-            width: 25%;
-            top: 0;
-            bottom: 0;
-            left: 20%;
-            margin: auto;
-            background-color: #fff;
-            box-shadow: 666px 0px 0px #fff;
-        }
-
         .news{
             width: 100%;
         }
         .news .group{
-            width: 1600px;
+            width: 90%;
             margin: 60px auto;
             position: relative;
             overflow: hidden;
         }
         .news .group img{
-            width: 1600px;
+            width:100%;
         }
         .news .group .min-group{
             position: absolute;
-            top: -80px;
+            top:50%;
+            transform: translateY(-50%);
             width: 700px;
             height: 700px;
             background-color: #fff;
@@ -107,12 +44,10 @@
             justify-content: center;
             text-align: center;
         }
-
         .news .group .min-group .txt{
-            position: absolute;
+            width: 70%;
             padding: 20px;
         }
-
         .news .group .min-group .txt h2{
             font-size: 36px;
             font-weight: 700;
@@ -131,136 +66,39 @@
             right: -150px;
         }
         .news :nth-child(1) .min-group .txt{
-            left: 210px;
+            transform: translateX(40px);
         }
         .news :nth-child(3) .min-group .txt{
-            left: 150px;
+            transform: translateX(60px);
         }
         .news :nth-child(2) .min-group .txt{
-            right: 150px;
+            transform: translateX(-60px);
         }
-        .foot{
-            width:100%;
-            height: 50px;
-            background-color: rgb(44, 33, 21);
-            color:#fff;
-            text-align: center;
-            padding-top: 25px;
-        }
-        .foot p{
-            font-size: 20px;
-        }
-
-        #menu_control{
-            position: absolute;
-        }
-        .menu_btn{
-            position: absolute;
-            display: block;
-            text-align: center;
-            top: 8.5px;
-            right: 10px;
-            width: 50px;
-            height: 50px;
-            display: none;
-            
-        }
-
-        .menu_btn span{
-            font-size: 25px;
-            opacity: 0;
-            
-        }
-
-        .menu_btn::before{
-            content:'';
-            position: absolute;
-            height: 3px;
-            width: 38px;
-            left: 6px;
-            background-color:rgb(117, 117, 117);
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            box-shadow: 0px 10px 0px rgb(117, 117, 117),
-                        0px -10px 0px rgb(117, 117, 117);
-            
-        }
-
         @media screen and (max-width:768px){
-
-            .wrap{
-                position: relative;
-                top:60px;
+            .banner{
+                background: url(image/banner_image_news.jpg) no-repeat 49.5% 20%/cover;
             }
-            
-            .header a img{
-                width: 50px;
-                padding: 3px 10px;
-            }
-
-            .header nav{
-                position: absolute;
-                background-color: #fff;
-                height:100vh;
-                width: 60%;
-                box-shadow:3px 0px 20px rgb(141, 141, 141);
-                left: -100%;
-                transition: 0.5s;
-            }
-            .header nav a{
-                display: block;
-                text-align:left;
-                padding: 20px;
-                border-bottom:1px solid rgb(141, 141, 141) ;
-                /* background-color: #aaa; */
-            }
-            .menu_btn{
-                display: block;
-            }
-
-            #menu_control:checked~.header nav{
-                left: 0;
-            }
-            .about::before{
-                content: '';
-                position: absolute;
-                height: 2px;
-                width: 25%;
-                top: 0;
-                bottom: 0;
-                left: 5%;
-                margin: auto;
-                background-color: #fff;
-                box-shadow: 260px 0px 0px #fff;
-            }
-
             .news .group{
                 width:100%;
                 margin: 40px auto;
                 overflow: hidden;
             }
-
             .news .group img{
                 width: 1600px;
                 position:relative;
                 left: -300px;
             }
             .news .group .min-group{
-                position: absolute;
-                top: 180px;
                 left: 0;
-                width: 460px;
-                height: 150px;
-                background-color: #fff;
-                opacity: 0.8;
+                width:100%;
+                height: 200px;
                 border-radius:0;
                 border-bottom: 5px solid rgb(104, 104, 104);
                 border-top: 5px solid rgb(104, 104, 104);
             }
 
             .news .group .min-group .txt{
-                left: 6%;
+                transform: translateX(0);
                 width:300px;
             }
 
@@ -291,15 +129,18 @@
             <a href="dessert_commodity.html">商品總覽</a>
             <a href="dessert_news.html">最新訊息</a>
             <a href="dessert_material.html">原料介紹</a>
-            <a href="dessert_shop.html">門市資訊</a>
+            <a href="dessert_shop.html">市集資訊</a>
             <a href="dessert_contact.html">聯絡我們</a>
         </nav>
     </div>
     <div class="wrap">
         <div class="banner">
-            <img src="image/banner_image_news.jpg" alt="點心資訊">
+            <div class="banner_txt">
+                <h1>夕暮手作派</h1>
+                <h3>News</h3>
+            </div>
         </div>
-        <div class="about">
+        <div class="title2">
             <h2>最新消息</h2>
         </div>
         <div class="news">
@@ -334,6 +175,8 @@
         <div class="foot">
             <p>copyright</p>
         </div>
-    </div>    
+    </div>
+    <script type="text/javascript" src="javascript/jquery.min.js"></script>
+    <script src="javascript/btn_change.js"></script>     
 </body>
 </html>

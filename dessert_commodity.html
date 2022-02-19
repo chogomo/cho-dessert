@@ -8,64 +8,27 @@
         <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" href="banner.css">
     <style type="text/css">
-        * {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            font-family: 'Noto Sans TC', sans-serif;
-        }
-        .wrap{
-            width: 100%;
-            margin: auto;
-        }
-        .header{
-            width: 100%;
+        .banner{
+            background:url(image/banner_image_commodity.jpg) no-repeat bottom/cover;
             display: flex;
-            background-color:#fff;
-            position:fixed;
-            z-index: 5;
+            align-items:end;
         }
-        .header a img{
-            width: 60px;
-            padding: 3px 10px;
-        }
-        .header nav{
-            width: 100%;
-            text-align: right;
-            padding: 20px 20px 20px 0;
-            font-size: 0;
-        }
-        .header nav a{
-            display: inline-block;
-            margin: 0 10px 0;
-            text-decoration: none;
-            color:rgb(141, 141, 141);
-            font-size: 20px;
-            font-weight: 700;
-            transition: 0.5s;
-        }
-
-        .header nav a:hover{
-            color:black;
-
-        }
-        .banner img{
-            width: 100%;
-            vertical-align: middle;
+        .banner h3::before{
+            width:80px;
         }
         .commodity{
-            width:100%; 
+            width:90%;
+            margin: auto; 
             display: flex;
-            justify-content: center;
-            background-color: rgb(255, 255, 255);
-            margin:auto;
+            justify-content:center;
             padding: 30px 0 ;
         }
         .commodity .item_nav{
-            width: 200px;
+            width: 15%;
             text-align: center;
-            margin: 0 20px;
+            margin: 10px 10px;
             padding: 20px;
             background-color: #eee;
         }
@@ -88,143 +51,95 @@
             color: black;
             border-bottom: 1px dotted #000;
         }
-        .commodity .pie .group{
+        .commodity .group{
+            width: 85%;
             display: flex;
+            flex-wrap: wrap;
+            justify-content:start;
         }
-        .commodity .pie .group .item{
-            margin: 10px;
+        .commodity .group .item{
+            width: 22%;
+            margin:5px;
             padding: 10px;
             border: 3px solid #eee;
         }
-        .commodity .pie .item img{
-            width: 300px;
+        .commodity .item a{
+            display: block;
+            width: 100%;
+            height:30vh;
+            overflow:hidden;
+            transition: 0.5s;
         }
-        .commodity .pie .item .txt{
+        .item .a1{
+            background: url(image/commodity_pic1.jpg) no-repeat center top/100% auto;
+        }
+        .item .a2{
+            background: url(image/commodity_pic2.jpg) no-repeat center top/100% auto;
+        }
+        .item .a3{
+            background: url(image/commodity_pic3.jpg) no-repeat center top/100% auto;
+        }
+        .item .a4{
+            background: url(image/commodity_pic4.jpg) no-repeat center top/100% auto;
+        }
+        .item .a5{
+            background: url(image/commodity_pic5.jpg) no-repeat center top/100% auto;
+        }
+        .item a:hover{
+            background-size: 110% auto;
+        }
+        .item .txt{
+            margin-top: 10px;
             text-align: center;
             font-size: 20px;
             font-weight: 600;
-            line-height: 30px;
+            line-height: 26px;
         }
-        .commodity .pie .item .shopping{
+        .item .shopping{
             text-align: center;
-            margin: 5px;
+            margin: 10px auto;
         }
-        .commodity .pie .item .shopping button{
+        .item .shopping button{
             font-size: 15px;
             background-color: #fff;
-            padding: 10px;
+            padding:10px;
             border: 2px solid #ccc;
         }
-        .foot{
-            width:100%;
-            height: 50px;
-            background-color: rgb(44, 33, 21);
-            color:#fff;
-            text-align: center;
-            padding-top: 25px;
+        @media screen and (max-width:912px){
+            .commodity .item a{
+                height: 11vh;
+            }
         }
-        .foot p{
-            font-size: 20px;
-        }
-
-        /*以下為RWD設定*/
-
-        #menu_control{
-            position: absolute;
-            /* z-index: 6; */
-        }
-        .menu_btn{
-            position: absolute;
-            display: block;
-            text-align: center;
-            top: 8.5px;
-            right: 10px;
-            width: 50px;
-            height: 50px;
-            display: none;
-            
-        }
-
-        .menu_btn span{
-            font-size: 25px;
-            opacity: 0;
-            
-        }
-
-        .menu_btn::before{
-            content:'';
-            position: absolute;
-            height: 3px;
-            width: 38px;
-            left: 6px;
-            background-color:rgb(117, 117, 117);
-            top: 0;
-            bottom: 0;
-            margin: auto;
-            box-shadow: 0px 10px 0px rgb(117, 117, 117),
-                        0px -10px 0px rgb(117, 117, 117);
-            
-        }
-
         @media screen and (max-width:768px){
-
-            .wrap{
-                position: relative;
-                top:60px;
-            }
-            
-            .header a img{
-                width: 50px;
-                padding: 3px 10px;
-            }
-
-            .header nav{
-                position: absolute;
-                background-color: #fff;
-                height:100vh;
-                width: 60%;
-                box-shadow:3px 0px 20px rgb(94, 94, 94);
-                left: -100%;
-                transition: 0.5s;
-            }
-            .header nav a{
-                display: block;
-                text-align:left;
-                padding: 20px;
-                border-bottom:1px solid rgb(141, 141, 141) ;
-            }
-            .menu_btn{
-                display: block;
-            }
-
-            #menu_control:checked~.header nav{
-                left: 0;
-            }
             .commodity{
                 flex-direction: column;
+                width: 100%;
             }
             .commodity .item_nav{
-                width: 90%;
+                width:90%;
                 margin: 0px auto 10px;
                 padding: 10PX 0px;
             }
-            .commodity .item_nav nav{
+            .item_nav nav{
                 flex-direction: none;
-                
             }
-            .commodity .item_nav h3{
+            .item_nav h3{
                 border-bottom: 2px solid #000; 
                 padding: 20px 0;
             }
-            .commodity .pie .group{
+            .commodity .group{
                 flex-direction: column;
+                width: 90%;
             }
-            .commodity .pie .group .item{
-                align-items: center;
-            }
-            .commodity .pie .item img{
+            .commodity .group .item{
                 width: 100%;
-                margin: auto;
+                margin: 10px;
+                padding: 2%;
+            }
+            .commodity .group .item a{
+                width: 100%;
+                height: 42vh;
+                background-position: center;
             }
         }    
     </style>
@@ -242,13 +157,16 @@
                     <a href="dessert_commodity.html">商品總覽</a>
                     <a href="dessert_news.html">最新訊息</a>
                     <a href="dessert_material.html">原料介紹</a>
-                    <a href="dessert_shop.html">門市資訊</a>
+                    <a href="dessert_shop.html">市集資訊</a>
                     <a href="dessert_contact.html">聯絡我們</a>
                 </nav>
             </div>
         <div class="wrap">
             <div class="banner">
-                <img src="image/banner_image_commodity.jpg" alt="點心資訊">
+                <div class="banner_txt">
+                    <h1>夕暮手作派</h1>
+                    <h3>Commodity</h3>
+                </div>
             </div>
             <div class="commodity">
                 <div class="item_nav">
@@ -261,59 +179,55 @@
                         <a href="">糖霜餅乾</a>
                     </nav>    
                 </div>
-                <div class="pie">
-                    <div class="group">
-                        <div class="item">
-                            <img src="image/commodity_pic1.jpg" alt="焦糖布丁派">
-                            <div class="txt">
-                                <p>焦糖布丁派<p>
-                                <p>$.700</p>
-                            </div>
-                            <div class="shopping">
-                                <button class="btn">加入購物車</button>
-                            </div>
+                <div class="group">
+                    <div class="item">
+                        <a class="a1" href=""></a>
+                        <div class="txt">
+                            <p>焦糖布丁派<p>
+                            <p>$.700</p>
                         </div>
-                        <div class="item">
-                            <img src="image/commodity_pic2.jpg" alt="印象咖啡派">
-                            <div class="txt">
-                                <p>印象咖啡派<p>
-                                <p>$.700</p>
-                            </div>
-                            <div class="shopping">
-                                <button class="btn">加入購物車</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="image/commodity_pic3.jpg" alt="經典南瓜派">
-                            <div class="txt">
-                                <p>經典南瓜派<p>
-                                <p>$.700</p>
-                            </div>
-                            <div class="shopping">
-                                <button class="btn">加入購物車</button>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="image/commodity_pic4.jpg" alt="經典生巧克力派">
-                            <div class="txt">
-                                <p>經典生巧克力派<p>
-                                <p>$.700</p>
-                            </div>
-                            <div class="shopping">
-                                <button class="btn">加入購物車</button>
-                            </div>
+                        <div class="shopping">
+                            <button class="btn">加入購物車</button>
                         </div>
                     </div>
-                    <div class="group">
-                        <div class="item">
-                            <img src="image/commodity_pic5.jpg" alt="經典檸檬派">
-                            <div class="txt">
-                                <p>經典檸檬派<p>
-                                <p>$.700</p>
-                            </div>
-                            <div class="shopping">
-                                <button class="btn">加入購物車</button>
-                            </div>
+                    <div class="item">
+                        <a class="a2" href=""></a>
+                        <div class="txt">
+                            <p>印象咖啡派<p>
+                            <p>$.700</p>
+                        </div>
+                        <div class="shopping">
+                            <button class="btn">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a class="a3" href=""></a>
+                        <div class="txt">
+                            <p>經典南瓜派<p>
+                            <p>$.700</p>
+                        </div>
+                        <div class="shopping">
+                            <button class="btn">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a class="a4" href=""></a>
+                        <div class="txt">
+                            <p>經典生巧克力派<p>
+                            <p>$.700</p>
+                        </div>
+                        <div class="shopping">
+                            <button class="btn">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a class="a5" href=""></a>
+                        <div class="txt">
+                            <p>經典檸檬派<p>
+                            <p>$.700</p>
+                        </div>
+                        <div class="shopping">
+                            <button class="btn">加入購物車</button>
                         </div>
                     </div>
                 </div>
@@ -321,6 +235,8 @@
             <div class="foot">
                 <p>copyright</p>
             </div>
-        </div>    
+        </div>
+        <script type="text/javascript" src="javascript/jquery.min.js"></script>
+        <script src="javascript/btn_change.js"></script>    
     </body>
     </html>
